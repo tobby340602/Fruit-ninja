@@ -14,8 +14,11 @@ public class ThrowCube : MonoBehaviour
     // The height that the cube will reach at the peak of its arc
     public float peakHeight = 5.0f;
 
+    private float gravity = -9.8f;
+
     private void Start()
     {
+        gravity = -1f;
         IEnumerator ThrowCoroutine()
         {
             var random = new System.Random();
