@@ -22,14 +22,14 @@ public class ThrowCube : MonoBehaviour
             while (true)
             {
                 yield return new WaitForSeconds(0.5f + (float) random.NextDouble());
-                Throw();
+                ThrowObject();
             }
         }
 
         StartCoroutine(ThrowCoroutine());
     }
 
-    private void Throw()
+    private void ThrowObject()
     {
         // Create a copy of the cube
         GameObject thrownCube = Instantiate(cube, transform.position, Quaternion.identity);
