@@ -18,7 +18,7 @@ public class ThrowCube : MonoBehaviour
 
     private void Start()
     {
-        gravity = -1f;
+        gravity = -2f;
         IEnumerator ThrowCoroutine()
         {
             var random = new System.Random();
@@ -43,10 +43,10 @@ public class ThrowCube : MonoBehaviour
         if (rb != null)
         {
             // Calculate the initial velocity required to reach the desired peak height
-            float initialVelocity = Mathf.Sqrt(2 * Physics.gravity.magnitude * peakHeight);
+            float initialVelocity = Mathf.Sqrt(3f * Physics.gravity.magnitude * peakHeight);
 
             // Calculate the total time taken to reach the peak and fall back to the original height
-            float totalTime = 2 * initialVelocity / Physics.gravity.magnitude;
+            float totalTime = 3f * initialVelocity / Physics.gravity.magnitude;
 
             // Calculate the horizontal speed required to reach the target in the total time
             float horizontalSpeed = throwSpeed / totalTime;
