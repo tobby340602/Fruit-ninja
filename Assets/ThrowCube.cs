@@ -38,15 +38,15 @@ public class ThrowCube : MonoBehaviour
         GameObject thrownCube = Instantiate(cube, transform.position, Quaternion.identity);
 
         // Get the Rigidbody component to apply forces
-        Rigidbody rb = thrownCube.GetComponent<Rigidbody>();
+        Rigidbody rbObject = thrownCube.GetComponent<Rigidbody>();
 
-        if (rb != null)
+        if (rbObject != null)
         {
             // Calculate the initial velocity required to reach the desired peak height
-            float initialVelocity = Mathf.Sqrt(3f * Physics.gravity.magnitude * peakHeight);
+            float initialVelocity = Mathf.Sqrt(2f * Physics.gravity.magnitude * peakHeight);
 
             // Calculate the total time taken to reach the peak and fall back to the original height
-            float totalTime = 3f * initialVelocity / Physics.gravity.magnitude;
+            float totalTime = 2f * initialVelocity / Physics.gravity.magnitude;
 
             // Calculate the horizontal speed required to reach the target in the total time
             float horizontalSpeed = throwSpeed / totalTime;
