@@ -36,6 +36,7 @@ public class ThrowCube : MonoBehaviour
     {
         // Create a copy of the cube
         GameObject thrownCube = Instantiate(cube, transform.position, Quaternion.identity);
+        GameObject testCube = Instantiate(cube, transform.position, Quaternion.identity);
 
         // Get the Rigidbody component to apply forces
         Rigidbody rbObject = thrownCube.GetComponent<Rigidbody>();
